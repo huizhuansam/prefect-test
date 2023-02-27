@@ -6,10 +6,9 @@ def setup():
     print("Setting up...")
 
 @flow
-def hello():
+def hello(log_prints=True):
     setup()
     print(f"Hello, Prefect! 🙌")
 
 if __name__ == "__main__":
     hello()
-    
