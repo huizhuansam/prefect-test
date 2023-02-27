@@ -1,9 +1,15 @@
-from prefect import flow
+from prefect import flow, get_run_logger
 
 
 @flow
+def add(x, y):
+    return x + y
+
+@flow
 def setup():
-    print("Setting up...")
+    logger = get_run_logger()
+    logger.info("Setting up...")
+    logger.info(f"Addition result = {add(6, 7)}")
 
 @flow
 def hello(log_prints=True):
